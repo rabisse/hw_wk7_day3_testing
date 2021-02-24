@@ -14,7 +14,6 @@ describe('App.vue', () => {
     expect(wrapper.vm.runningTotal).to.equal(9)
   })
 
-
   it('should add', () => {
     wrapper.vm.previousTotal = 1
     wrapper.vm.add('4')
@@ -60,7 +59,6 @@ describe('App.vue', () => {
   })
 
 })
-
 
 // add() - add 1 to 4 and get 5
 // subtract() subtract 4 from 7 and get 3
