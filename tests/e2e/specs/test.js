@@ -27,6 +27,49 @@ describe('calculator', () => {
     cy.get('#operator_equals').click()
     cy.get('.display').should('contain', '4')
   })
+
+  it('should display positive numbers', () => {
+    cy.get('#number2').click()
+    cy.get('#operator_add').click()
+    cy.get('#number6').click()
+    cy.get('#operator_equals').click()
+    cy.get('.display').should('contain', '8')
+  })
+
+  it('should display negative numbers', () => {
+    cy.get('#number2').click()
+    cy.get('#operator_subtract').click()
+    cy.get('#number4').click()
+    cy.get('#operator_equals').click()
+    cy.get('.display').should('contain', '-2')
+  })
+
+  it('should display decimals', () => {
+    cy.get('#number3').click()
+    cy.get('#operator_divide').click()
+    cy.get('#number2').click()
+    cy.get('#operator_equals').click()
+    cy.get('.display').should('contain', '1.5')
+  })
+
+  it('should display very large numbers', () => {
+    cy.get('#number9').click()
+    cy.get('#number9').click()
+    cy.get('#number9').click()
+    cy.get('#number9').click()
+    cy.get('#number9').click()
+    cy.get('#number9').click()
+    cy.get('#number9').click()
+    cy.get('#number9').click()
+    cy.get('#number9').click()
+    cy.get('#number9').click()
+    cy.get('#operator_multiply').click()
+    cy.get('#number9').click()
+    cy.get('#operator_multiply').click()
+    cy.get('#number9').click()
+    cy.get('#operator_equals').click()
+    cy.get('.display').should('contain', '809999999919')
+  })
   
   it('should error when divide by zero', () => {
     cy.get('#number2').click()
